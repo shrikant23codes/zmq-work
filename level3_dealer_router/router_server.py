@@ -7,6 +7,10 @@ import time
 
 ADDR = "tcp://127.0.0.1:5555"
 
+"""
+Router server starts a poller to receive requests from clients. Then for each request it does async processing.
+Once processing it done, it reads from queue and does send to clients
+"""
 
 def process(identity, request, reply_queue):
     delay = random.uniform(0.1, 1.0)

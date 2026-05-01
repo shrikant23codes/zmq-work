@@ -7,6 +7,11 @@ import sys
 ADDR = "tcp://127.0.0.1:5555"
 NUMBER_OF_REQUESTS = 5
 
+"""
+Client first sends all requests to router server.
+Then starts a poller to wait for replies.
+"""
+
 def main(client_id: int):
     print(f"Starting dealer client...")
     context = zmq.Context()
